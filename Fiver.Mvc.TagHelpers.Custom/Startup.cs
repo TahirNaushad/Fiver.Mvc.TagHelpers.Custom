@@ -12,25 +12,30 @@ namespace Fiver.Mvc.TagHelpers.Custom
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public Startup(
+            IHostingEnvironment env,
+            ILoggerFactory loggerFactory)
         {
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void ConfigureServices(
+            IServiceCollection services)
         {
-            loggerFactory.AddConsole();
+            services.AddMvc();
+        }
 
-            if (env.IsDevelopment())
+        public void Configure(
+            IApplicationBuilder app, 
+            IHostingEnvironment env, 
+            ILoggerFactory loggerFactory)
+        {
+            app.UseDeveloperExceptionPage();
+            app.UseMvc(routes =>
             {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
