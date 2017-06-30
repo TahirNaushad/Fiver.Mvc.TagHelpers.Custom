@@ -1,0 +1,28 @@
+﻿@model Fiver.Mvc.TagHelpers.Custom.Models.Home.ProfileViewModel
+
+@*@foreach (var employee in Model.Employees)
+    {
+        <details>
+            <summary>@employee.Name</summary>
+            <em>@employee.JobTitle</em>
+            <p>@employee.Profile</p>
+            <ul>
+                @foreach (var friend in employee.Friends)
+                {
+                    <li>@friend.Name</li>
+                }
+            </ul>
+        </details>
+    }*@
+
+@foreach (var employee in Model.Employees)
+{
+    <employee summary="@employee.Name"
+              job-title="@employee.JobTitle"
+              profile="@employee.Profile">
+        @foreach (var friend in employee.Friends)
+        {
+            <friend name="@friend.Name" />
+        }
+    </employee>
+}

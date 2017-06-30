@@ -11,7 +11,12 @@ namespace Fiver.Mvc.TagHelpers.Custom.Controllers
     {
         public IActionResult Index()
         {
-            var model = new IndexViewModel
+            return View();
+        }
+
+        public IActionResult Profile()
+        {
+            var model = new ProfileViewModel
             {
                 Employees = new List<EmployeeViewModel>
                 {

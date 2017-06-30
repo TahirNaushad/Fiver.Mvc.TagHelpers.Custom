@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Razor.TagHelpers;
-using System;
+﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Text;
 
 namespace Fiver.Mvc.TagHelpers.Custom.TagHelpers
@@ -18,7 +16,7 @@ namespace Fiver.Mvc.TagHelpers.Custom.TagHelpers
         public string Profile { get; set; }
 
         public override void Process(
-            TagHelperContext context, 
+            TagHelperContext context,
             TagHelperOutput output)
         {
             output.TagName = "details";
