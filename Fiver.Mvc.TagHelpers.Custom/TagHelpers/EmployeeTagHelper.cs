@@ -4,7 +4,7 @@ using System.Text;
 namespace Fiver.Mvc.TagHelpers.Custom.TagHelpers
 {
     [HtmlTargetElement("employee")]
-    public class EmployeeProfileTagHelper : TagHelper
+    public class EmployeeTagHelper : TagHelper
     {
         [HtmlAttributeName("summary")]
         public string Summary { get; set; }
@@ -37,7 +37,7 @@ namespace Fiver.Mvc.TagHelpers.Custom.TagHelpers
     [HtmlTargetElement("friend", 
         ParentTag = "employee",
         TagStructure = TagStructure.WithoutEndTag)]
-    public class EmployeeFriendTagHelper : TagHelper
+    public class FriendTagHelper : TagHelper
     {
         [HtmlAttributeName("name")]
         public string Name { get; set; }

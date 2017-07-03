@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Fiver.Mvc.TagHelpers.Custom.Models.Home;
 
 namespace Fiver.Mvc.TagHelpers.Custom
 {
@@ -22,6 +23,8 @@ namespace Fiver.Mvc.TagHelpers.Custom
         public void ConfigureServices(
             IServiceCollection services)
         {
+            services.AddScoped<IGreetingService, GreetingService>();
+
             services.AddMvc();
         }
 

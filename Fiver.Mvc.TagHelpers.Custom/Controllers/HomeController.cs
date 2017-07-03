@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Fiver.Mvc.TagHelpers.Custom.Models.Home;
 
@@ -14,36 +11,60 @@ namespace Fiver.Mvc.TagHelpers.Custom.Controllers
             return View();
         }
 
-        public IActionResult Profile()
+        public IActionResult Employees()
         {
-            var model = new ProfileViewModel
+            var model = new EmployeesViewModel
             {
-                Employees = new List<EmployeeViewModel>
+                Employees = new List<Employee>
                 {
-                    new EmployeeViewModel {
+                    new Employee {
                         Name = "Tahir Naushad",
                         JobTitle = "Software Developer",
                         Profile = "C#/ASP.NET Developer",
-                        Friends = new List<FriendViewModel>
+                        Friends = new List<Friend>
                         {
-                            new FriendViewModel { Name = "Tom" },
-                            new FriendViewModel { Name = "Dick" },
-                            new FriendViewModel { Name = "Harry" },
+                            new Friend { Name = "Tom" },
+                            new Friend { Name = "Dick" },
+                            new Friend { Name = "Harry" },
                         }
                     },
-                    new EmployeeViewModel {
+                    new Employee {
                         Name = "James Bond",
                         JobTitle = "MI6 Agent",
                         Profile = "Has licence to kill",
-                        Friends = new List<FriendViewModel>
+                        Friends = new List<Friend>
                         {
-                            new FriendViewModel { Name = "James Gordon" },
-                            new FriendViewModel { Name = "Robin Hood" },
+                            new Friend { Name = "James Gordon" },
+                            new Friend { Name = "Robin Hood" },
                         }
                     },
                 }
             };
             return View(model);
+        }
+
+        public IActionResult Movie()
+        {
+            var model = new MovieViewModel
+            {
+                Title = "Diamonds Are Forever",
+                ReleaseYear = "1971",
+                Director = "Guy Hamilton",
+                Summary = "A diamond smuggling investigation leads James Bond to Las Vegas, where he uncovers an evil plot involving a rich business tycoon.",
+                Stars = new List<string> { "Sean Connery", "Jill St. John", "Charles Gray" }
+            };
+            return View(model);
+        }
+
+        public IActionResult Context()
+        {
+            ViewBag.Greeting = "Hello Context Tag Helper";
+            return View();
+        }
+
+        public IActionResult Greet()
+        {
+            return View();
         }
     }
 }

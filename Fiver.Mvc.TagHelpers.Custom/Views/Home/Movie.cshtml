@@ -1,0 +1,60 @@
+﻿@model Fiver.Mvc.TagHelpers.Custom.Models.Home.MovieViewModel
+
+<style>
+    .movie-tag {
+        width: 500px;
+    }
+    .movie-title{
+        font-weight: bold;
+        font-size: x-large;
+    }
+    .movie-year {
+        font-weight: normal;
+        font-style: italic;
+    }
+    .movie-director {
+        padding: 5px;
+    }
+    .movie-summary {
+        padding: 5px;
+    }
+    .movie-stars {
+        padding: 5px;
+    }
+</style>
+
+@*<div class="movie-tag">
+    
+    <div class="movie-title">
+        @Model.Title
+
+        <span class="movie-year">
+            (@Model.ReleaseYear)
+        </span>
+    </div>
+    
+    <div class="movie-director">
+        <span>Director: @Model.Director</span>
+    </div>
+
+    <div class="movie-summary">
+        <strong>Plot: </strong> @Model.Summary
+    </div>
+
+    <div class="movie-stars">
+        <strong>Stars</strong>
+        <ul>
+            @foreach (var item in Model.Stars)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </div>
+
+</div>*@
+
+<movie for-title="Title"
+       for-year="ReleaseYear"
+       for-director="Director"
+       for-summary="Summary"
+       for-stars="Stars" />

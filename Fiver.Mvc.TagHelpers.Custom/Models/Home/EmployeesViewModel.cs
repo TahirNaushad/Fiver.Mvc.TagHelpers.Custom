@@ -2,20 +2,20 @@
 
 namespace Fiver.Mvc.TagHelpers.Custom.Models.Home
 {
-    public class ProfileViewModel
+    public class EmployeesViewModel
     {
-        public List<EmployeeViewModel> Employees { get; set; }
+        public List<Employee> Employees { get; set; }
     }
 
-    public class EmployeeViewModel
+    public class Employee
     {
         public string Name { get; set; }
         public string JobTitle { get; set; }
         public string Profile { get; set; }
-        public List<FriendViewModel> Friends { get; set; }
+        public List<Friend> Friends { get; set; }
     }
 
-    public class FriendViewModel
+    public class Friend
     {
         public string Name { get; set; }
     }
